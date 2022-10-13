@@ -17,4 +17,5 @@ const controllerGetId = async (req, res) => {
 module.exports = {
   controllerGetAll,
   controllerGetId,
+  
 };

@@ -24,4 +24,5 @@ const salesGetId = async (id) => {
 module.exports = {
   salesGetAll,
   salesGetId,
+  
 };

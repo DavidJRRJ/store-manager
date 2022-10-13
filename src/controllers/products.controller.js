@@ -21,8 +21,16 @@ const controllerProductsPost = async (req, res) => {
   return res.status(201).json(message[0]);
 };
 
+const controllerProductsDelete = async (req, res) => {
+  const { id } = req.params;
+  const { type, message } = await productsService.serviceProductDelete(id);
+  if (type) return res.status(404).json({ message });
+  res.status(204).json(message);
+};
+
 module.exports = {
   controllerProductsAll,
   controllerProductsById,
   controllerProductsPost,
+  controllerProductsDelete,
 };

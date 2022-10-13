@@ -19,8 +19,17 @@ const serviceProductsPost = async (name) => {
   return { message: result };
 };
 
+const serviceProductDelete = async (id) => {
+  const product = await productsModel.productById(id);
+  console.log(product);
+  if (product.length <= 0) return { type: 'not found', message: 'Product not found' };
+  await productsModel.productDelete(id);
+  return { type: null, message: [] };
+};
+
 module.exports = {
   serviceProductsAll,
   serviceProductsById,
   serviceProductsPost,
+  serviceProductDelete,
 };

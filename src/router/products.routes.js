@@ -10,4 +10,6 @@ routes.get('/:id', productsController.controllerProductsById);
 
 routes.post('/', nameValidation, productsController.controllerProductsPost);
 
+routes.delete('/:id', productsController.controllerProductsDelete);
+
 module.exports = routes;
