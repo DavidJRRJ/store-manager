@@ -8,17 +8,19 @@ const serviceProductsAll = async () => {
 const serviceProductsById = async (productId) => {
   const result = await productsModel.productById(productId);
   console.log(result);
-  // if (result <= 0) {
-  //   return {
-  //     message: 'Product not found',
-  //     status: 404,
-  //   };
-  // }
 
   return { message: result, status: 200 };
+};
+
+const serviceProductsPost = async (name) => {
+  const resultId = await productsModel.productPost(name);
+  const result = await productsModel.productById(resultId);
+  console.log(result);
+  return { message: result };
 };
 
 module.exports = {
   serviceProductsAll,
   serviceProductsById,
+  serviceProductsPost,
 };
