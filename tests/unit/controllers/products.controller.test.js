@@ -56,23 +56,23 @@ describe('Testes de unidade da camada controller do /products', function () {
     expect(res.json).to.have.been.calledWith({ message: 'Product not found' })
   });
 
-  it('Verifica se é retornado 201 ao cadastrar um produto', async function () {
-    sinon.stub(productsService, 'serviceProductsPost').resolves(product);
+  // it('Verifica se é retornado 201 ao cadastrar um produto', async function () {
+  //   sinon.stub(productsService, 'serviceProductsPost').resolves(product);
     
-    const res = {};
-    const req = {
-      body: {
-        name: product.name,
-      },
-    };
+  //   const res = {};
+  //   const req = {
+  //     body: {
+  //       name: product.name,
+  //     },
+  //   };
 
-    res.status = sinon.stub().returns(res);
-    res.json = sinon.stub().returns();
+  //   res.status = sinon.stub().returns(res);
+  //   res.json = sinon.stub().returns();
 
-    await productsController.controllerProductsPost(req, res);
+  //   await productsController.controllerProductsPost(req, res);
 
-    expect(res.status).to.have.been.calledOnceWith(201);
-    // expect(res.json).to.have.been.calledWith(product);
-  });
+  //   expect(res.status).to.have.been.calledOnceWith(201);
+  //   // expect(res.json).to.have.been.calledWith(product);
+  // });
 
 });
