@@ -14,14 +14,13 @@ const controllerGetId = async (req, res) => {
   return res.status(200).json(result);
 };
 
-const controllerSalesinsert = async (req, res) => {
-  const products = req.body;
-  const result = await salesService.serviceSalesInsert(products);
-  return res.status(201).json(result);
-};
+// const controllerSalesinsert = async (req, res) => {
+//   const products = req.body;
+//   const result = await salesService.serviceSalesInsert(products);
+//   return res.status(201).json(result);
+// };
 
 module.exports = {
   controllerGetAll,
   controllerGetId,
-  controllerSalesinsert,
 };

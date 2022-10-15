@@ -7,7 +7,6 @@ const serviceProductsAll = async () => {
 
 const serviceProductsById = async (productId) => {
   const result = await productsModel.productById(productId);
-  // console.log(result);
 
   return { message: result, status: 200 };
 };
@@ -15,7 +14,6 @@ const serviceProductsById = async (productId) => {
 const serviceProductsPost = async (name) => {
   const resultId = await productsModel.productPost(name);
   const result = await productsModel.productById(resultId);
-  console.log(result);
   return { message: result };
 };
 
