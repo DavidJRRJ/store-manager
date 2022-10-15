@@ -1,8 +1,8 @@
 const { productsService } = require('../services');
 
 const controllerProductsAll = async (_req, res) => {
-  const { message, status } = await productsService.serviceProductsAll();
-  res.status(status).json(message);
+  const { message } = await productsService.serviceProductsAll();
+  res.status(200).json(message);
 };
 
 const controllerProductsById = async (req, res) => {
